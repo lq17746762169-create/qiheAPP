@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  网络安全性配置
+  - 开发阶段允许所有明文 HTTP 请求（连接本机服务器）
+  - 正式发布时请删除此文件，并改用 HTTPS
+-->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>

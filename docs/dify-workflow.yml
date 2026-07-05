@@ -1,0 +1,917 @@
+app:
+  description: ''
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  icon_type: emoji
+  mode: advanced-chat
+  name: 契合
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/openrouter:0.0.55@cbed0c987a4965df9ccc273e1ea18126b3314fd24f5fcecd52fa8f5ae0072074
+    version: null
+kind: app
+version: 0.6.0
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      - document
+      allowed_file_upload_methods:
+      - local_file
+      enabled: true
+      fileUploadConfig:
+        attachment_image_file_size_limit: 2
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        file_upload_limit: 50
+        image_file_batch_limit: 10
+        image_file_size_limit: 10
+        single_chunk_attachment_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 10
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: true
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: 1782955930399-source-1782956511082-target
+      selected: false
+      source: '1782955930399'
+      sourceHandle: source
+      target: '1782956511082'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: llm
+      id: 1782954969341-c1ccc657-3863-499a-8125-0624b58a7745-1782955930399-target
+      selected: false
+      source: '1782954969341'
+      sourceHandle: c1ccc657-3863-499a-8125-0624b58a7745
+      target: '1782955930399'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: llm
+      id: 1782954969341-530cce89-576b-40df-9780-637d4c950bb9-1782955965731-target
+      selected: false
+      source: '1782954969341'
+      sourceHandle: 530cce89-576b-40df-9780-637d4c950bb9
+      target: '1782955965731'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: 1782955965731-source-1782956511082-target
+      selected: false
+      source: '1782955965731'
+      sourceHandle: source
+      target: '1782956511082'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: answer
+      id: 1782954969341-false-1783012482085-target
+      selected: false
+      source: '1782954969341'
+      sourceHandle: 'false'
+      target: '1783012482085'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: document-extractor
+        targetType: llm
+      id: 1783097464311-source-llm-target
+      source: '1783097464311'
+      sourceHandle: source
+      target: llm
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: if-else
+      id: llm-source-1782954969341-target
+      selected: false
+      source: llm
+      sourceHandle: source
+      target: '1782954969341'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: llm
+      id: 1782954969341-d8960280-eacb-44ae-9437-3efc4b9c664e-1783195548608-target
+      source: '1782954969341'
+      sourceHandle: d8960280-eacb-44ae-9437-3efc4b9c664e
+      target: '1783195548608'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: answer
+      id: 1783195548608-source-1782956511082-target
+      source: '1783195548608'
+      sourceHandle: source
+      target: '1782956511082'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: code
+      id: 1782954969341-true-1783200199226-target
+      source: '1782954969341'
+      sourceHandle: 'true'
+      target: '1783200199226'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: answer
+      id: 1783200199226-source-1782956511082-target
+      source: '1783200199226'
+      sourceHandle: source
+      target: '1782956511082'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: start
+        targetType: if-else
+      id: 1782954926822-source-17832008766190-target
+      source: '1782954926822'
+      sourceHandle: source
+      target: '17832008766190'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: document-extractor
+      id: 17832008766190-f866e5bd-10da-4376-a939-d7ffbe6c1adb-1783097464311-target
+      source: '17832008766190'
+      sourceHandle: f866e5bd-10da-4376-a939-d7ffbe6c1adb
+      target: '1783097464311'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: llm
+      id: 17832008766190-6ee4b5ac-1405-4235-b7f3-d7e2206c4241-llm-target
+      source: '17832008766190'
+      sourceHandle: 6ee4b5ac-1405-4235-b7f3-d7e2206c4241
+      target: llm
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: document-extractor
+      id: 17832008766190-4c8e791e-49c7-4cef-952b-6f8fb278ce81-1783097464311-target
+      source: '17832008766190'
+      sourceHandle: 4c8e791e-49c7-4cef-952b-6f8fb278ce81
+      target: '1783097464311'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: answer
+      id: 17832008766190-false-1783147686423-target
+      source: '17832008766190'
+      sourceHandle: 'false'
+      target: '1783147686423'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        selected: false
+        title: 用户输入
+        type: start
+        variables: []
+      height: 73
+      id: '1782954926822'
+      position:
+        x: 0
+        y: 221.10887740257863
+      positionAbsolute:
+        x: 0
+        y: 221.10887740257863
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        memory:
+          query_prompt_template: '{{#sys.query#}}{{#1783097464311.text#}}{{#sys.files#}}'
+          role_prefix:
+            assistant: ''
+            user: ''
+          window:
+            enabled: true
+            size: 20
+        model:
+          completion_params:
+            temperature: 0.1
+          mode: chat
+          name: google/gemini-3.1-flash-lite-preview
+          provider: langgenius/openrouter/openrouter
+        prompt_template:
+        - id: a6c6d6cb-6fd2-4e4b-8da3-ae71e7473f9d
+          role: system
+          text: '根据用户输入内容识别用户意图：
+
+
+            当用户意图为"需要房屋租赁类合同模板"时，输出"合同模板"
+
+
+            当用户意图为"需要生成或拟定房屋租赁类合同"时，输出"拟定合同"
+
+
+            当用户意图为"需要审查合同"时，输出"审查合同"
+
+
+            当收到文档内容且与合同相关时，输出"审查合同"
+
+
+            当用户意图为"需要审查合同"且收到的文档内容与合同相关时，输出"审查合同"
+
+
+            当用户意图为"需要生成房屋租赁类合同"或需根据文档内容优化补充时，且文档内容与合同相关，输出"拟定合同"
+
+
+            当用户输入与合同业务完全无关时，输出"无关内容"
+
+
+            当用户输入和文档内容都无关时，输出无关内容
+
+            '
+        selected: false
+        title: 识别意图
+        type: llm
+        vision:
+          configs:
+            detail: high
+            variable_selector:
+            - sys
+            - files
+          enabled: true
+      height: 88
+      id: llm
+      position:
+        x: 1066
+        y: 224.42424242424238
+      positionAbsolute:
+        x: 1066
+        y: 224.42424242424238
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: is
+            id: 239231d2-a2bd-4567-930c-081b7b2c4bb0
+            value: 合同模板
+            varType: string
+            variable_selector:
+            - llm
+            - text
+          id: 'true'
+          logical_operator: and
+        - case_id: c1ccc657-3863-499a-8125-0624b58a7745
+          conditions:
+          - comparison_operator: is
+            id: d1c624c6-a94b-41d2-98ae-7ac758090b10
+            value: 拟定合同
+            varType: string
+            variable_selector:
+            - llm
+            - text
+          id: c1ccc657-3863-499a-8125-0624b58a7745
+          logical_operator: and
+        - case_id: d8960280-eacb-44ae-9437-3efc4b9c664e
+          conditions:
+          - comparison_operator: is
+            id: 27cb1340-f614-4f6f-ab45-86f051d664cd
+            value: 审查合同
+            varType: string
+            variable_selector:
+            - llm
+            - text
+          id: d8960280-eacb-44ae-9437-3efc4b9c664e
+          logical_operator: and
+        - case_id: 530cce89-576b-40df-9780-637d4c950bb9
+          conditions:
+          - comparison_operator: is
+            id: b20fda2c-b764-471c-a16f-82162c3643b6
+            value: 无关内容
+            varType: string
+            variable_selector:
+            - llm
+            - text
+          id: 530cce89-576b-40df-9780-637d4c950bb9
+          logical_operator: and
+        selected: false
+        title: 条件分支2
+        type: if-else
+      height: 268
+      id: '1782954969341'
+      position:
+        x: 1408
+        y: 149.09090909090907
+      positionAbsolute:
+        x: 1408
+        y: 149.09090909090907
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        memory:
+          query_prompt_template: '{{#sys.query#}}
+
+
+            {{#sys.files#}}{{#1783097464311.text#}}'
+          role_prefix:
+            assistant: ''
+            user: ''
+          window:
+            enabled: true
+            size: 20
+        model:
+          completion_params:
+            temperature: 0.3
+          mode: chat
+          name: google/gemini-3.1-flash-lite-preview
+          provider: langgenius/openrouter/openrouter
+        prompt_template:
+        - id: b47d7b7b-ccc4-472d-bde3-39d6757e5df9
+          role: system
+          text: '你正在帮用户拟定一份房屋租赁合同。你需要结合{{#context#}}和{{#sys.query#}}收集以下必填信息。
+
+
+            【必填信息清单】
+
+            1. 出租方：姓名、身份证号、联系电话
+
+            2. 承租方：姓名、身份证号、联系电话
+
+            3. 房屋：详细地址、面积、户型
+
+            4. 租期：起止日期
+
+            5. 租金：月租金额、押金、支付方式、付款周期、退押金条件和退押金时间
+
+            6. 水电气及物业费：由哪方承担
+
+
+            【核心规则——请严格遵守】
+
+            1. 分析用户当前输入，逐项核对上述6项必填信息
+
+            2. 如果还有任何一项缺失：只追问缺失项，每轮问1-3项，语气友好。绝对不能输出合同正文
+
+            3. 只有当6项必填信息全部收齐后，才能输出合同
+
+            4. 输出合同时必须把用户提供的真实信息填入对应条款中，不允许出现"______"或"____"等占位符
+
+
+            【合同输出格式——仅在所有信息收齐后使用】
+
+            <<<CONTRACT_START>>>
+
+            # 房屋租赁合同
+
+            （将用户实际提供的出租方信息、承租方信息、房屋地址面积户型、租期起止日期、月租金金额、押金金额、支付方式、付款周期、退押金条件、水电物业费承担方等信息，逐一填入对应条款中）
+
+            <<<CONTRACT_END>>>
+
+
+            【追问格式——信息不齐时使用】
+
+            好的，我来帮你拟定合同。还需要补充以下信息：
+
+            - （列出1-3项缺失的必填信息）
+
+            你可以一次性发给我，也可以分几条发送。'
+        selected: false
+        title: 拟定合同
+        type: llm
+        vision:
+          configs:
+            detail: high
+            variable_selector:
+            - sys
+            - files
+          enabled: true
+      height: 88
+      id: '1782955930399'
+      position:
+        x: 1770
+        y: 132
+      positionAbsolute:
+        x: 1770
+        y: 132
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: google/gemini-3.1-flash-lite-preview
+          provider: langgenius/openrouter/openrouter
+        prompt_template:
+        - id: 7df639a9-dc1c-43e3-9ff5-13589a92fb9b
+          role: system
+          text: '以官方客户的身份用简明扼要的语言与用户沟通：
+
+            1、告知用户此前输入的内容与本App业务无关
+
+            2、引导用户输入与房屋租赁合同拟定和审批相关的内容或问题'
+        selected: false
+        title: 无关内容
+        type: llm
+        vision:
+          enabled: false
+      height: 88
+      id: '1782955965731'
+      position:
+        x: 1770
+        y: 468
+      positionAbsolute:
+        x: 1770
+        y: 468
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        author: Dify
+        desc: ''
+        height: 88
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"聊天输入框默认为必输入项，怎么改？","type":"text","version":1}],"direction":null,"format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"上下文只能关联一个变量","type":"text","version":1}],"direction":null,"format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"上下文只能关联一个变量？","type":"text","version":1}],"direction":null,"format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""},{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"新增代码执行模块用来代用工具","type":"text","version":1}],"direction":null,"format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""}],"direction":null,"format":"","indent":0,"type":"root","version":1}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 240
+      height: 88
+      id: '1782956053694'
+      position:
+        x: 641.5008581090939
+        y: -254.84638728815625
+      positionAbsolute:
+        x: 641.5008581090939
+        y: -254.84638728815625
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 240
+    - data:
+        answer: '{{#1782955930399.text#}}{{#1783195548608.text#}}{{#1782955965731.text#}}{{#1783200199226.result#}}'
+        selected: false
+        title: 直接回复
+        type: answer
+        variables: []
+      height: 160
+      id: '1782956511082'
+      position:
+        x: 2132
+        y: 267.0202020202021
+      positionAbsolute:
+        x: 2132
+        y: 267.0202020202021
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        answer: 抱歉，系统暂时无法处理您的请求，请稍后重试或重新描述您的问题。
+        selected: false
+        title: 兜底回复
+        type: answer
+        variables: []
+      height: 116
+      id: '1783012482085'
+      position:
+        x: 1770
+        y: 636
+      positionAbsolute:
+        x: 1770
+        y: 636
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        is_array_file: true
+        selected: false
+        title: 文档提取器
+        type: document-extractor
+        variable_selector:
+        - sys
+        - files
+      height: 104
+      id: '1783097464311'
+      position:
+        x: 704
+        y: 288.65656565656565
+      positionAbsolute:
+        x: 704
+        y: 288.65656565656565
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        answer: 抱歉，只支持上传文字、文档或图片格式的附件。
+        selected: false
+        title: 直接回复 3
+        type: answer
+        variables: []
+      height: 116
+      id: '1783147686423'
+      position:
+        x: 704
+        y: 472.6565656565656
+      positionAbsolute:
+        x: 704
+        y: 472.6565656565656
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        memory:
+          query_prompt_template: '{{#sys.query#}}
+
+
+            {{#sys.files#}}{{#1783097464311.text#}}'
+          role_prefix:
+            assistant: ''
+            user: ''
+          window:
+            enabled: true
+            size: 20
+        model:
+          completion_params:
+            temperature: 0.3
+          mode: chat
+          name: google/gemini-3.1-flash-lite-preview
+          provider: langgenius/openrouter/openrouter
+        prompt_template:
+        - id: f3850e85-d031-4368-824e-da61a819c36f
+          role: system
+          text: '你正在帮用户审查一份房屋租赁合同。你需要结合{{#context#}}和{{#sys.query#}}对用户上传或提供的合同内容进行逐条审查，并生成结构化的审查报告。
+
+
+
+            审查维度（后续由律师确认）：
+
+
+            1、高风险——条款直接违反法律强制性规定，或导致合同部分/全部无效，条款本身即可定性。共六大类：
+
+            •主体与权属：出租方主体不适格
+
+            •租赁期限：期限违法
+
+            •押金与费用：强制租金贷、押金超地方上限等
+
+            •居住安全：出租非居住空间、隐性群租
+
+            •权利剥夺：排除法定解除权、随意扣押金、免除人身损害责任
+
+            •歧视与违禁：禁止特定人群入住
+
+
+
+            2、中风险——条款本身不违法但权利义务明显失衡。共五大类：
+
+            •权责不对等：单方终止权、不合理的免责条款
+
+            •费用分担：维修全归一方、退押金条件单方决定
+
+            •违约责任失衡：违约金畸高、一方解除即丧失全部押金
+
+            •管辖与争议：对一方明显不利的管辖
+
+            •格式条款：未对重要条款尽提示说明义务
+
+
+
+            3、低风险——表述模糊权责不清，履约中可能引发纠纷。共七大类：
+
+            •房屋状态与交付：无交付清单、设施归属不清
+
+            •租金与费用：水电分摊不清、押金退还无期限
+
+            •维修责任：划分不清、响应时间未约定
+
+            •提前退租与续租：退租赔偿不明、通知期未约定
+
+            •房屋返还：恢复原状标准模糊、验收流程缺失
+
+            •转租与同住人：转租条件模糊、宠物规则缺失
+
+            •特殊情形：不可抗力、征收拆迁、争议解决条款缺失
+
+
+
+            输出格式要求：按以下结构输出，每个风险项严格遵循三段式：
+
+
+            ## 整体风险总结
+
+            （用一段话概括本合同的主要风险点和整体风险等级）
+
+
+            ---
+
+
+            ## 风险明细
+
+
+            ### [高风险] 风险标题
+
+            > 条款原文：引用合同中相关原文内容
+
+
+            风险描述：详细说明存在的具体风险及潜在后果
+
+
+            ---
+
+
+            ### [中风险] 风险标题
+
+            > 条款原文：引用合同中相关原文内容
+
+
+            风险描述：详细说明存在的具体风险及潜在后果
+
+
+            ---
+
+
+            ### [低风险] 风险标题
+
+            > 条款原文：引用合同中相关原文内容
+
+
+            风险描述：详细说明存在的具体风险及潜在后果
+
+
+            规则：
+
+            1. 标签为 [高风险]/[中风险]/[低风险]
+
+            2. 必须包含：标签+标题 → 条款原文 → 风险描述
+
+            3. 无风险的类别说明"未发现"
+
+            4. 未提供合同内容时，提示用户上传或输入'
+        selected: false
+        structured_output_enabled: false
+        title: 审查合同
+        type: llm
+        vision:
+          configs:
+            detail: high
+            variable_selector:
+            - sys
+            - files
+          enabled: true
+      height: 88
+      id: '1783195548608'
+      position:
+        x: 1770
+        y: 300
+      positionAbsolute:
+        x: 1770
+        y: 300
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        code: "def main() -> dict:\n    template = \"<<<TEMPLATE:housing_lease>>>\"\
+          \n    return {\"result\": template}"
+        code_language: python3
+        outputs:
+          result:
+            children: null
+            type: string
+        selected: false
+        title: 代码执行
+        type: code
+        variables: []
+      height: 52
+      id: '1783200199226'
+      position:
+        x: 1729.4124722162082
+        y: -0.6614555767897023
+      positionAbsolute:
+        x: 1729.4124722162082
+        y: -0.6614555767897023
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        cases:
+        - case_id: f866e5bd-10da-4376-a939-d7ffbe6c1adb
+          conditions:
+          - comparison_operator: not empty
+            id: 0f612732-cfcd-4cc1-a4bf-4d80500dc763
+            value: ''
+            varType: string
+            variable_selector:
+            - sys
+            - query
+          - comparison_operator: empty
+            id: 138844ff-7061-451d-9c8b-5fe6646c40e2
+            value: ''
+            varType: array[file]
+            variable_selector:
+            - sys
+            - files
+          id: f866e5bd-10da-4376-a939-d7ffbe6c1adb
+          logical_operator: and
+        - case_id: 6ee4b5ac-1405-4235-b7f3-d7e2206c4241
+          conditions:
+          - comparison_operator: all of
+            id: 4896d649-e8cb-4823-afe3-14b74fdf7243
+            sub_variable_condition:
+              case_id: b240cd6d-7f85-4942-ab1f-8311dda3df4b
+              conditions:
+              - comparison_operator: in
+                id: d991331d-e956-4b74-a525-fbb4e68b2eb4
+                key: type
+                value:
+                - image
+                varType: string
+              logical_operator: and
+            value: ''
+            varType: array[file]
+            variable_selector:
+            - sys
+            - files
+          - comparison_operator: not empty
+            id: 54db4d20-eddf-4b5a-b37e-6a4df2c4c8de
+            value: ''
+            varType: string
+            variable_selector:
+            - sys
+            - query
+          id: 6ee4b5ac-1405-4235-b7f3-d7e2206c4241
+          logical_operator: and
+        - case_id: 4c8e791e-49c7-4cef-952b-6f8fb278ce81
+          conditions:
+          - comparison_operator: all of
+            id: 34a1f0fb-e190-4389-8765-33873ae02ad6
+            sub_variable_condition:
+              case_id: cb5165ec-daa4-4d0e-882c-08e375b7b4d6
+              conditions:
+              - comparison_operator: in
+                id: fd002dee-e44d-4861-ad46-ec3793123be6
+                key: type
+                value:
+                - document
+                varType: string
+              logical_operator: and
+            value: ''
+            varType: array[file]
+            variable_selector:
+            - sys
+            - files
+          - comparison_operator: not empty
+            id: 57c16831-c49e-4de0-bec6-3c2d76047f12
+            value: ''
+            varType: string
+            variable_selector:
+            - sys
+            - query
+          id: 4c8e791e-49c7-4cef-952b-6f8fb278ce81
+          logical_operator: and
+        desc: ''
+        isInIteration: false
+        isInLoop: false
+        selected: false
+        title: 条件分支1 (2)
+        type: if-else
+      height: 346
+      id: '17832008766190'
+      position:
+        x: 319.102143224165
+        y: 74.83004059599256
+      positionAbsolute:
+        x: 319.102143224165
+        y: 74.83004059599256
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    viewport:
+      x: -1498.8504191061693
+      y: 326.4013676561781
+      zoom: 0.8705505632961248
+  rag_pipeline_variables: []
